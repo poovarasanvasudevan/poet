@@ -11,7 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.mikepenz.iconics.IconicsDrawable;
-import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic;
+import com.mikepenz.ionicons_typeface_library.Ionicons;
+
 
 import in.shpt.app.R;
 import in.shpt.app.databinding.ActivityHomeBinding;
@@ -25,7 +26,7 @@ public class Home extends AppCompatActivity {
 
         setSupportActionBar(activityHomeBinding.toolbar);
 
-        activityHomeBinding.searchButton.setImageDrawable(new IconicsDrawable(this, MaterialDesignIconic.Icon.gmi_accounts_list).sizeDp(24).color(Color.DKGRAY));
+        activityHomeBinding.searchButton.setImageDrawable(new IconicsDrawable(this, Ionicons.Icon.ion_ios_star).sizeDp(24).color(Color.DKGRAY));
 
 
         activityHomeBinding.navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -63,8 +64,8 @@ public class Home extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home_menu, menu);
 
-        menu.findItem(R.id.cart).setIcon(new IconicsDrawable(this, MaterialDesignIconic.Icon.gmi_shopping_cart).actionBar().color(Color.WHITE));
-        menu.findItem(R.id.notification).setIcon(new IconicsDrawable(this, MaterialDesignIconic.Icon.gmi_notifications).actionBar().color(Color.WHITE));
+        menu.findItem(R.id.cart).setIcon(new IconicsDrawable(this, Ionicons.Icon.ion_ios_cart).actionBar().color(Color.WHITE));
+        menu.findItem(R.id.notification).setIcon(new IconicsDrawable(this, Ionicons.Icon.ion_ios_bell).actionBar().color(Color.WHITE));
 
         return super.onCreateOptionsMenu(menu);
     }
