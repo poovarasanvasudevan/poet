@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <carbon.widget.RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="in.shpt.app.activity.Home">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            tools:openDrawer="start">
+
+            <carbon.widget.RelativeLayout
+                android:id="@+id/fullContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#eaeaea">
+
+                <carbon.widget.CardView
+                    android:id="@+id/searchCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:carbon_cornerRadius="0dp"
+                    app:cardElevation="4dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp">
+
+                        <ImageButton
+                            android:id="@+id/searchButton"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:background="@null" />
+
+                        <EditText
+                            android:id="@+id/searchView"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_toRightOf="@+id/searchButton"
+                            android:background="@null"
+                            android:hint="Search" />
+                    </RelativeLayout>
+
+                </carbon.widget.CardView>
+
+                <carbon.widget.ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/searchCard">
+
+
+                    <carbon.widget.RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <carbon.widget.LinearLayout
+                            android:id="@+id/networkProblemLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <com.mikepenz.iconics.view.IconicsImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                app:iiv_color="?colorPrimary"
+                                app:iiv_icon="gmi_network_off" />
+
+                            <carbon.widget.TextView
+                                style="@style/carbon_TextAppearance.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="No Internet Connection" />
+                        </carbon.widget.LinearLayout>
+                    </carbon.widget.RelativeLayout>
+                </carbon.widget.ScrollView>
+            </carbon.widget.RelativeLayout>
+
+            <android.support.design.widget.NavigationView
+                android:id="@+id/navigationView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                app:menu="@menu/nav_menu" />
+        </android.support.v4.widget.DrawerLayout>
+
+    </carbon.widget.RelativeLayout>
+</layout>

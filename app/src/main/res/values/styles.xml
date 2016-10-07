@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/carbon_Theme.Light.NoActionBar">
+        <item name="colorPrimary">@color/carbon_blue_500</item>
+        <item name="colorPrimaryDark">@color/carbon_blue_700</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>
