@@ -1,12 +1,17 @@
 package in.shpt.app.activity;
 
 import android.databinding.DataBindingUtil;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.mikepenz.iconics.IconicsDrawable;
+import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic;
 
 import in.shpt.app.R;
 import in.shpt.app.databinding.ActivityHomeBinding;
@@ -20,7 +25,7 @@ public class Home extends AppCompatActivity {
 
         setSupportActionBar(activityHomeBinding.toolbar);
 
-        //activityHomeBinding.searchButton.setImageDrawable(new IconicsDrawable(th));
+        activityHomeBinding.searchButton.setImageDrawable(new IconicsDrawable(this, MaterialDesignIconic.Icon.gmi_accounts_list).sizeDp(24).color(Color.DKGRAY));
 
 
         activityHomeBinding.navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -52,5 +57,20 @@ public class Home extends AppCompatActivity {
         //calling sync state is necessay or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu, menu);
+
+        menu.findItem(R.id.cart).setIcon(new IconicsDrawable(this, MaterialDesignIconic.Icon.gmi_shopping_cart).actionBar().color(Color.WHITE));
+        menu.findItem(R.id.notification).setIcon(new IconicsDrawable(this, MaterialDesignIconic.Icon.gmi_notifications).actionBar().color(Color.WHITE));
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 }
