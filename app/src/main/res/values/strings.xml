@@ -2,4 +2,5 @@
     <string name="app_name">SHPT-app</string>
     <string name="openDrawer">open</string>
     <string name="closeDrawer">close</string>
+    <string name="popular_products">Popular Products</string>
 </resources>
